@@ -18,27 +18,22 @@ class Solution:
         res[cur_row][cur_col] = cur_num
 
         while min_col < max_col and min_row < max_row:
-            print(min_col, max_col, min_row, max_row)
             # 向下
             while cur_row < max_row - cur_col:
                 cur_row += 1
                 cur_num += 1
                 res[cur_row][cur_col] = cur_num
-            print(res)
 
-            print(min_col, max_col, min_row, max_row)
             # 斜向上
             while cur_row > min_row and cur_col <= max_col - cur_row:
                 cur_row -= 1
                 cur_col += 1
                 cur_num += 1
                 res[cur_row][cur_col] = cur_num
-            print(res)
 
             min_col += 1
             max_row -= 1
 
-            print(min_col, max_col, min_row, max_row)
             # 向左
             while cur_col > min_col:
                 cur_col -= 1
@@ -46,8 +41,6 @@ class Solution:
                 res[cur_row][cur_col] = cur_num
             max_col -= 1
             min_row += 1
-
-            print(res)
 
         final_res = []
         for l in res:
